@@ -6,26 +6,23 @@ The Synopsys Coverity Metrics utility is used to collect usage and performance
 data from a Coverity server. When analyzed, this data can illustrate the actual
 and potential value of your static analysis efforts.
 
-## Note
-sig-metrics-java11.jar requires Java 11 - use this for Coverity Connect version 2019.03 or later
-sig-metrics-java8.jar requires Java 8 - use this for Coverity Connect versions older than 2019.03
-
 ## Basics
+
+Use this for Coverity Connect version 2019.03 or later:
 ```
-# If using Java 11...
 wget https://github.com/thaljef/synopsys-coverity-metrics/raw/main/sig-metrics-0.9.3-java11.jar
-java -jar sig-metrics-0.9.3-java11.jar -host connect1.example.com -port 8443 -ssl -user admin -passfile admin_pass.txt -datestart 2017-01-01 -dateend 2017-06-30 -detailed
-
-
-#if using Java 8...
-wget https://github.com/thaljef/synopsys-coverity-metrics/blob/main/sig-metrics-0.9.3-java8.jar
-java -jar sig-metrics-0.9.3-java8.jar -url https://connect1.example.com:8443 -user admin -passfile admin_pass.txt -detailed
+java -jar sig-metrics-0.9.3-java11.jar -url YOUR_COVERITY_SERVER_URL -user admin -detailed
 ```
 
-## Options
+Use this for Coverity Connect versions earlier than 2019.3:
+```
+wget https://github.com/thaljef/synopsys-coverity-metrics/raw/main/sig-metrics-0.9.3-java8.jar
+java -jar sig-metrics-0.9.3-java8.jar -host YOUR_COVERITY_SERVER_HOSTNAME -port 8443 -ssl -user admin -detailed
+```
+
+## Command Options
 
 ```
-usage: java -jar sig-metrics-0.9.3-javaX.jar [OPTIONS]
  -host <arg>        (Optional) Hostname of the Coverity Connect server.
  -port <arg>        (Optional) Port of the Coverity Connect server.
  -path <arg>        (Optional) Path to the Coverity Connect server, if necessary.
