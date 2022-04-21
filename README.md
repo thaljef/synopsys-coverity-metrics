@@ -8,16 +8,18 @@ and potential value of your static analysis efforts.
 
 ## Basics
 
-Use this for Coverity Connect version 2019.03 or later:
+Use this for Coverity Connect version 2019.03 or later. Substitue to `COVERITY_URL` with the
+URL that you use to access your Coverity Connect server:
 ```
 wget https://github.com/thaljef/synopsys-coverity-metrics/raw/main/sig-metrics-0.9.3-java11.jar
-java -jar sig-metrics-0.9.3-java11.jar -url YOUR_COVERITY_SERVER_URL -user admin -detailed
+java -jar sig-metrics-0.9.3-java11.jar -url COVERITY_URL -user admin -detailed
 ```
 
-Use this for Coverity Connect versions earlier than 2019.3:
+Use this for Coverity Connect versions earlier than 2019.3. Substitute `COVERITY_HOST` and
+`COVERITY_PORT` with the correct values for your Coverity Connect server:
 ```
 wget https://github.com/thaljef/synopsys-coverity-metrics/raw/main/sig-metrics-0.9.3-java8.jar
-java -jar sig-metrics-0.9.3-java8.jar -host YOUR_COVERITY_SERVER_HOSTNAME -port 8443 -ssl -user admin -detailed
+java -jar sig-metrics-0.9.3-java8.jar -host COVERITY_HOST -port COVERITY_PORT -ssl -user admin -detailed
 ```
 
 ## Command Options
